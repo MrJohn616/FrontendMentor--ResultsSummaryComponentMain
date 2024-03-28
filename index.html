@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="wrapper__card">
+      <div class="card__int card__int--blue">
+        <h2 class="int__title color--pale">Your Result</h2>
+        <div class="int__circle"><p>76</p><p class="color--pale">of 100</p><div></div></div>
+        <p class="int__subtitle">Great</p>
+        <p class="int__p">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+
+      <div class="card__int">
+        <h2 class="int__title int__title--second">Summary</h2>
+        <div class="int__card">
+          <div class="card__sec card__sec--reaction">
+            <div>
+              <span class="sec__icon--reaction"></span>
+              <p class="sec__title--reaction">Reaction</p>
+            </div>
+            <div class="sec__res">
+              <span><b>80&nbsp</b></span>
+              <span>/ 100</span>
+            </div>
+          </div>
+
+          <div class="card__sec card__sec--memory">
+            <div>
+              <span class="sec__icon--memory"></span>
+              <p class="sec__title--memory">Memory</p>
+            </div>
+            <div class="sec__res">
+              <span><b>92&nbsp</b></span>
+              <span>/ 100</span>
+            </div>
+          </div>
+
+          <div class="card__sec card__sec--verbal">
+            <div>
+              <span class="sec__icon--verbal"></span>
+              <p class="sec__title--verbal">Verbal</p>
+            </div>
+            <div class="sec__res">
+              <span><b>61&nbsp</b></span>
+              <span>/ 100</span>
+            </div>
+          </div>
+
+          <div class="card__sec card__sec--visual">
+            <div>
+              <span class="sec__icon--visual"></span>
+              <p class="sec__title--visual">Visual</p>
+            </div>
+            <div class="sec__res">
+              <span><b>72&nbsp</b></span>
+              <span>/ 100</span>
+            </div>
+          </div>
+        </div>
+        <div class="int__button">
+          <button>Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

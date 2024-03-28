@@ -1,0 +1,216 @@
+@use 'mediaQ';
+@use 'attribution';
+@use 'card';
+// Primario
+$color__p__red--light: hsl(0, 100%, 67%);
+$color__p__red--light--back: hsla(0, 100%, 67%, 0.1);
+$color__p__orenge--yellow: hsl(39, 100%, 56%);
+$color__p__orenge--yellow--back: hsla(39, 100%, 56%, 0.1);
+$color__p__green--teal: hsl(166, 100%, 37%);
+$color__p__green--teal--back: hsla(166, 100%, 37%, 0.1);
+$color__p__cobalt--blue: hsl(234, 85%, 45%);
+$color__p__cobalt--blue--back: hsla(234, 85%, 45%, 0.1);
+// Neutral
+$color__n__white: hsl(0, 0%, 100%);
+$color__n__blue--pale: hsl(221, 100%, 96%);
+$color__n__lavander--light: hsl(241, 100%, 89%);
+$color__n__blue--dark: hsl(224, 30%, 27%);
+// Gradiente
+$color__g--1__blue--slate: hsl(252, 100%, 67%);
+$color__g--1__blue--royal: hsl(241, 81%, 54%);
+$color__g--2__blue--violet: hsla(256, 72%, 46%, 1);
+$color__g--2__blue--persian: hsla(241, 72%, 46%, 0);
+
+// Font
+$font__family: "Hanken Grotesk", sans-serif;
+$font__size: 18px;
+$font__weight--l: 500;
+$font__weight--m: 700;
+$font__weight--h: 800;
+
+// Hidde
+.hidde{
+  display: none;
+  overflow: hidden;
+}
+
+// General
+html{
+  font-family: $font__family;
+  background: $color__n__blue--pale;
+}
+
+//Mixin
+@mixin icon($icon){
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-image: $icon;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin color($color){
+  color: $color;
+}
+@mixin bacgroundColor($color){
+  background-color: $color;
+}
+
+// Content
+.wrapper{
+  margin: 20px;
+  border-radius: 30px;
+  .wrapper__card{
+    flex-wrap: wrap;
+    .card__int{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 0;
+      box-sizing: border-box;
+      height: 100%;
+      min-width: 300px;
+      // margin: 1em;
+      padding: 2em;
+      .int__title{
+        flex: 1 0;
+      }
+      .int__circle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 100 0;
+        height: 180px;
+        width: 180px;
+        div{
+          position: absolute;
+          z-index: 1;
+          height: 180px;
+          width: 180px;
+          background: linear-gradient(0deg, $color__g--2__blue--persian 0%, $color__g--2__blue--violet 100%);
+          border-radius: 50%;
+        }
+        p:first-child{
+          position: relative;
+          z-index: 50;
+          margin: 0;
+          font-size: 4.3em;
+          font-weight: $font__weight--h;
+        }
+        p{
+          position: relative;
+          z-index: 50;
+          margin: 0;
+        }
+      }
+      .int__title--second{
+        align-self: flex-start;
+        flex: 1 0;
+        margin: 0;
+        color: $color__n__blue--dark;
+      }
+      .color--pale{
+        color: $color__n__lavander--light;
+      }
+      .int__subtitle{
+        flex: 1 0;
+        font-size: 1.7em;
+        margin: 10px 0 0;
+      }
+      .int__p{
+        flex: 1 0;
+        width: 75%;
+        text-align: center;
+        color: $color__n__lavander--light;
+      }
+      //
+      .int__card{
+        flex: 1 0;
+        width: 100%;
+        .card__sec{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 50px;
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .sec__icon--reaction{
+              @include icon(url(../images/icon-reaction.svg));
+            }
+            .sec__icon--memory{
+              @include icon(url(../images/icon-memory.svg));
+            }
+            .sec__icon--verbal{
+              @include icon(url(../images/icon-verbal.svg));
+            }
+            .sec__icon--visual{
+              @include icon(url(../images/icon-visual.svg));
+            }
+          }
+          .sec__title--reaction{
+            @include color($color__p__red--light);
+          }
+          .sec__title--memory{
+            @include color($color__p__orenge--yellow);
+          }
+          .sec__title--verbal{
+            @include color($color__p__green--teal);
+          }
+          .sec__title--visual{
+            @include color($color__p__cobalt--blue);
+          }
+          .sec__res{
+            margin-right: 10px;
+          }
+          span:last-child{
+            color: $color__n__lavander--light;
+          }
+        }
+        .card__sec--reaction{
+          @include bacgroundColor($color__p__red--light--back);
+        }
+        .card__sec--memory{
+          @include bacgroundColor($color__p__orenge--yellow--back);
+        }
+        .card__sec--verbal{
+          @include bacgroundColor($color__p__green--teal--back);
+        }
+        .card__sec--visual{
+          @include bacgroundColor($color__p__cobalt--blue--back);
+        }
+      }
+      .int__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0;
+        width: 100%;
+        button{
+          height: 50px;
+          width: 100%;
+          box-sizing: border-box;
+          border: none;
+          border-radius: 40px;
+          background-color: $color__n__blue--dark;
+          color: $color__n__white;
+        }
+      }
+    }
+    .card__int--blue{
+      border-radius: 20px;
+      background: linear-gradient(180deg, $color__g--1__blue--slate 0%, $color__g--1__blue--royal 100%);
+      color: $color__n__white;
+    }
+  }
+}
+
+// img{
+//   background-image: url(../images/icon-reaction.svg);
+// }
